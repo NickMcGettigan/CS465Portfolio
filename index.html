@@ -3,26 +3,25 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" />
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-        <script>
-            // smooth scroll
-            // 74 prevents roll over of about/projects background. Should be 64?
+        <script type="text/javascript">
+            // Same page scroll
+            // TODO: add scroll from other page
+            // - 74 prevents roll over of about/projects background. Should be 64?
             // https://stackoverflow.com/questions/45728818/how-to-smooth-scroll-to-an-id-after-clicking-a-link-from-another-page
             $(document).ready(function() {
                 $('a[href*=\\#]').on('click', function(e){
                     e.preventDefault();
                     $('html, body').animate({
-                        scrollTop : $(this.hash).offset().top -74
+                        scrollTop : $(this.hash).offset().top - 74
                     }, 500);
                 });
             });
-
         </script>
-        
+
         <style type="text/css">
 			.navbar {
 				margin-bottom:30px;
@@ -38,6 +37,15 @@
             .nav-item:hover {
                 font-weight: bolder;
             }
+            body {
+                background-image: url("https://i.imgur.com/Y3ShL3b.jpg");
+                min-height: 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+            }
+            
 		</style>
 	</head>
 	<body>
@@ -65,48 +73,42 @@
             </ul>
 			</div>
         </nav>
-
-        <div id="top" class="container-fluid rounded" style="padding-left: 0px; padding-right: 0px; height: 272px; background-color: white;">
-
-        </div>
         
-        <div id = "about" class="container-fluid rounded" style="padding-left: 0px; padding-right: 0px; height: 272px; background-color: #E9ECEF;">
+        <div id = "about" class="container-fluid rounded shadow-sm p-3 mb-5" style="margin-top: 300px; padding-left: 0px; padding-right: 0px; background-color: #E9ECEF;">
             <div class="row" style="padding-top: 32px; padding-bottom: 32px; padding-left: 47px;"><h1>About</h1></div>
-            <div class="col-md-12" style="padding-left: 47px; padding-right: 47px">
-				<p>this exercise looks like more work than it actually is, since you can copy and paste a majority of it. you might ask yourself in this regard why there is a gap between the navbar and the jumbotron. this is because the navbar is set to static and not to fixed.</p>
-
-			</div>
+            <div class="row" style="padding-top: 32px; padding-bottom: 32px;">
+                <div class="col-md-4" style="padding-left: 80px; padding-bottom: 60px; padding-right: 47px">
+                    <a href="https://imgur.com/7h9ncYm"><img src="https://i.imgur.com/7h9ncYm.jpg" title="Nick Photo" /></a>
+                </div>
+                <div class="col-md-8" style="padding-left: 47px; padding-right: 47px">
+                    <p>Nick is a data analyst working in the transportation industry, with a background in auditing and the financial division.  Also communicating directly with clients and other departments to resolve complex problems has promoted not only a customer first approach but also working in a team environment.</p>
+                    <br>
+                    <p>As an analyst with adhoc reporting duties to the officer group, he has gained a deep understanding of seeking the reason behind the questions being asked.  This not only aids in answer the question being asked but the one that isn't being asked.  With experience in Tableau, PowerBI, and SSMS he has been a key asset in restructuring operational reporting across the company.</p>
+                </div>
+            </div>
 		</div>
-
-        <div class="container-fluid rounded" style="padding-left: 0px; padding-right: 0px; height: 272px; background-color: white;"></div>
         
-        <div id="projects" class="container-fluid rounded" style="background-color: #E9ECEF;">
+        <div id="projects" class="container-fluid rounded shadow-sm p-3 mb-5" style="margin-top: 300px; margin-bottom: 200px; background-color: #E9ECEF;">
             <div class="row" style="padding-top: 32px; padding-bottom: 32px; padding-left: 47px;"><h1>Projects</h1></div>
             <div class="row" style="padding-top: 32px; padding-bottom: 32px;">
 				<div class="col-lg-4" style="padding-left: 28px; padding-right: 28px">
-					<h2>heading</h2>
-					<p>vivamus felis odio, tristique posuere mollis ut, gravida et lorem. etiam a augue fermentum, auctor erat nec, porttitor magna. proin sit amet egestas purus. proin iaculis sed quam sit amet laoreet.</p>
-					<p><a class="btn btn-secondary" href="#" role="button">more details &#xbb</a></p>
+					<h2>Portfolio Website</h2>
+					<p>This website, an introductury to full stack development.  Development is ongoing as new features are added.  Next up will be adding links to the link webpage</p>
+					<p><a class="btn btn-secondary" href="https://github.com/NickMcGettigan/NickMcGettigan.github.io" target="_blank" role="button">more details &#xbb</a></p>
 				</div>
 				<div class="col-lg-4" style="padding-left: 28px; padding-right: 28px">
-					<h2>heading</h2>
-					<p>curabitur malesuada gravida lacus eget iaculis. duis diam magna, gravida ac posuere sit amet, sollicitudin non justo. praesent pretium tristique risus. donec feugiat, tortor ac semper laoreet, enim arcu tempor nisi, eu aliquam ex nisl elementum ex.</p>
-					<p><a class="btn btn-secondary" href="#" role="button">more details &#xbb</a></p>
+					<h2>Custom Power BI Visual</h2>
+					<p>This is a gauge for power bi that changes color based on the target.  When below the target a color is used for the bar and above is a different color.  The standard implementation holds a single color and is less useful for a quick look.</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">more details &#xbb</a></p>
+                    <br>
+                    <p>Not currently publicly available.</p>
 				</div>
 				<div class="col-lg-4" style="padding-left: 28px; padding-right: 28px">
-					<h2>heading</h2>
-					<p>integer posuere sed justo vel dignissim. pellentesque elementum aliquam aliquet. nullam quis consectetur libero, et cursus nunc. donec iaculis enim a velit iaculis dictum. aliquam erat volutpat.</p>
-					<p><a class="btn btn-secondary" href="#" role="button">more details &#xbb</a></p>
+					<h2>Screeps</h2>
+					<p>This is a javascript based scripting game.  All gameplay is based on javascript that each user uploads to the site.  Code repository link to last stable version of working code.</p>
+					<p><a class="btn btn-secondary" href="https://screeps.com/" target="_blank" role="button">more details &#xbb</a></p>
 				</div>
 			</div>
-        </div>	
-
-        <div id="end" class="container-fluid rounded" style="padding-left: 0px; padding-right: 0px; height: 272px; background-color: white;">
         </div>
-     
-
-        <hr style="margin-left: 35px; margin-right: 35px">
-        <p style="margin-left: 35px; margin-right: 35px">NLM - CS465 Portfolio</p>	
-		
 	</body>
 </html>
