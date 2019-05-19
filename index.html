@@ -15,9 +15,19 @@
             $(document).ready(function() {
                 $('a[href*=\\#]').on('click', function(e){
                     e.preventDefault();
-                    $('html, body').animate({
-                        scrollTop : $(this.hash).offset().top - 74
-                    }, 500);
+                    if (this.hash === "#top") {   
+                        $('html, body').animate({
+                            scrollTop : 0
+                        }, 500);
+                        console.log(this.hash);
+                    }
+                    else {
+
+                        $('html, body').animate({
+                            scrollTop : $(this.hash).offset().top - 74
+                        }, 500);
+                        console.log(this.hash);
+                    }
                 });
             });
         </script>
